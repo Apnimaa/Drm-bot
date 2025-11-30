@@ -42,9 +42,9 @@ import ffmpeg
 # Initialize the bot
 bot = Client(
     "bot",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN
+    api_id=27433400,
+    api_hash="1a286620de5ffe0a7d9b57e604293555",
+    bot_token="8409425850:AAH_cMt_YrQM_FmJTAjwp8MuOkkN709AVr0"
 )
 
 processing_request = False
@@ -845,7 +845,7 @@ async def send_logs(client: Client, m: Message):  # Correct parameter name
         await m.reply_text(f"**Error sending logs:**\n<blockquote>{e}</blockquote>")
 
 
-@bot.on_message(filters.command(["Ankit1"]) )
+@bot.on_message(filters.command(["drm"]) )
 async def txt_handler(bot: Client, m: Message):  
     global processing_request, cancel_requested, cancel_message
     processing_request = True
@@ -1069,21 +1069,21 @@ async def txt_handler(bot: Client, m: Message):
 
             elif "https://cpvod.testbook.com/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = f"https://team-jnc-ba95987c225e.herokuapp.com/api?url={url}"
+                url = f"https://team-jnc-ba95987c225e.herokuapp.com/api?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8"
                 #url = f"https://scammer-keys.vercel.app/api?url={url}&token={cptoken}&auth=@scammer_botxz1"
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
 
             elif "classplusapp.com/drm/" in url:
-                url = f"https://team-jnc-ba95987c225e.herokuapp.com/api?url={url}"
+                url = f"https://team-jnc-ba95987c225e.herokuapp.com/api?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8"
                 #url = f"https://scammer-keys.vercel.app/api?url={url}&token={cptoken}&auth=@scammer_botxz1"
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
 
             elif "classplusapp" in url:
-                signed_api = f"https://team-jnc-n-drm.vercel.app/api?url={url}"
+                signed_api = f"https://team-jnc-n-drm.vercel.app/api?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8"
                 response = requests.get(signed_api, timeout=10)
                 url = response.text.strip()
                 
@@ -1094,7 +1094,7 @@ async def txt_handler(bot: Client, m: Message):
                 url = response.json()['url']  
            
             elif 'videos.classplusapp' in url:
-                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': f'{cptoken}'}).json()['url']
+                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8', headers={'x-access-token': f'{cptoken}'}).json()['url']
             
             elif 'media-cdn.classplusapp.com' in url or 'media-cdn-alisg.classplusapp.com' in url or 'media-cdn-a.classplusapp.com' in url: 
                 headers = {'host': 'api.classplusapp.com', 'x-access-token': f'{cptoken}', 'accept-language': 'EN', 'api-version': '18', 'app-version': '1.4.73.2', 'build-number': '35', 'connection': 'Keep-Alive', 'content-type': 'application/json', 'device-details': 'Xiaomi_Redmi 7_SDK-32', 'device-id': 'c28d3cb16bbdac01', 'region': 'IN', 'user-agent': 'Mobile-Android', 'webengage-luid': '00000187-6fe4-5d41-a530-26186858be4c', 'accept-encoding': 'gzip'}
@@ -1107,13 +1107,13 @@ async def txt_handler(bot: Client, m: Message):
                 url = url.split("bcov_auth")[0]+bcov
                 
             elif "childId" in url and "parentId" in url:
-                url = f"https://anonymouspwplayer-25261acd1521.herokuapp.com/pw?url={url}&token={raw_text4}"
+                url = f"https://anonymouspwplayer-25261acd1521.herokuapp.com/pw?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8&token={raw_text4}"
                            
             elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
-                url = f"https://anonymouspwplayer-25261acd1521.herokuapp.com/pw?url={url}&token={raw_text4}"
+                url = f"https://anonymouspwplayer-25261acd1521.herokuapp.com/pw?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8&token={raw_text4}"
 
             if ".pdf*" in url:
-                url = f"https://dragoapi.vercel.app/pdf/{url}"
+                url = f"https://dragoapi.vercel.app/pdf/https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8"
             
             elif 'encrypted.m' in url:
                 appxkey = url.split('*')[1]
@@ -1412,13 +1412,13 @@ async def text_handler(bot: Client, m: Message):
 
             elif "https://cpvod.testbook.com/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = 'https://dragoapi.vercel.app/classplus?link=' + url
+                url = 'https://api.extractor.workers.dev/player?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8'
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
 
             elif "classplusapp.com/drm/" in url:
-                url = 'https://dragoapi.vercel.app/classplus?link=' + url
+                url = 'https://api.extractor.workers.dev/player?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8'
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
@@ -1430,7 +1430,7 @@ async def text_handler(bot: Client, m: Message):
                 url = response.json()['url']  
            
             elif 'videos.classplusapp' in url:
-                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': f'{raw_text4}'}).json()['url']
+                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8', headers={'x-access-token': f'{raw_text4}'}).json()['url']
             
             elif 'media-cdn.classplusapp.com' in url or 'media-cdn-alisg.classplusapp.com' in url or 'media-cdn-a.classplusapp.com' in url: 
                 headers = {'host': 'api.classplusapp.com', 'x-access-token': f'{raw_text4}', 'accept-language': 'EN', 'api-version': '18', 'app-version': '1.4.73.2', 'build-number': '35', 'connection': 'Keep-Alive', 'content-type': 'application/json', 'device-details': 'Xiaomi_Redmi 7_SDK-32', 'device-id': 'c28d3cb16bbdac01', 'region': 'IN', 'user-agent': 'Mobile-Android', 'webengage-luid': '00000187-6fe4-5d41-a530-26186858be4c', 'accept-encoding': 'gzip'}
@@ -1439,14 +1439,14 @@ async def text_handler(bot: Client, m: Message):
                 url   = response.json()['url']
 
             elif "childId" in url and "parentId" in url:
-                url = f"https://anonymouspwplayerr-f996115ea61a.herokuapp.com/pw?url={url}&token={raw_text4}"
+                url = f"https://anonymouspwplayerr-f996115ea61a.herokuapp.com/pw?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8&token={raw_text4}"
                            
             elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
                 vid_id =  url.split('/')[-2]
-                url = f"https://anonymouspwplayerr-f996115ea61a.herokuapp.com/pw?url={url}&token={raw_text4}"
+                url = f"https://anonymouspwplayerr-f996115ea61a.herokuapp.com/pw?url=https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8&token={raw_text4}"
                 
             if ".pdf*" in url:
-                url = f"https://dragoapi.vercel.app/pdf/{url}"
+                url = f"https://dragoapi.vercel.app/pdf/https://media-cdn.classplusapp.com/drm/68a9797a9973451ecea07191/playlist.m3u8"
             
             elif 'encrypted.m' in url:
                 appxkey = url.split('*')[1]
